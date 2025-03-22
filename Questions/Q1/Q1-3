@@ -1,0 +1,9 @@
+Consider this information:
+The CPU resources allocated by the UAV server to the vehicle k computational tasks   fuk: 2.75 GHz
+The ratio of vehicles’ computational tasks processed by servers at UAV side θuk: 0.68
+The calculation task parameter D_k: 1.5 Mbit
+The total CPU cycles required to process the computational tasks for vehicle k Ck: 1000 cycles/bit
+
+
+
+"""question = """ Based on this information,  compute the computational latency for the tasks on the UAV side?

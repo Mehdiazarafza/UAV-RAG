@@ -1,0 +1,10 @@
+Consider this information:
+The data rate requirements of user i (ɸi): 350 MB
+The transmission power of the DBS pd: 0.1 W
+The noise power level N0: -104 dBm/MHz
+The average pathloss between the DBS and user i: 131 dB
+Two solutions l1 and l2: 1, 1.5
+
+
+
+"""question = """ Based on this information,  compute the utility ratio (ζ )that is associated to each user i. give the final result

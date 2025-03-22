@@ -1,0 +1,7 @@
+Consider this information:
+The constant value p0: 1.5
+The forward speed v:110 K/h
+The blade angular velocity: 300 radians/second
+The rotor radius: 0.4 m
+
+"""question = """ Based on this information,  compute the Blade power of UAV in forward flight ?

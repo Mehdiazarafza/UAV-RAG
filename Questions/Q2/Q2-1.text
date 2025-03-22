@@ -1,0 +1,5 @@
+Consider this information:
+Ground user’s position: (47, 23) m
+UAV-BS’s position: (65, 73, 15) m
+The LoS and NLoS probability constants: 9.61, 0.16
+Question: Based on this information, calculate the probability of the ground user transmitting data to UAV i in a line-of-sight (LoS) manner

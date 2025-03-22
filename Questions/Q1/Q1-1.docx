@@ -1,0 +1,6 @@
+Consider this information:
+1.     Ground user’s position: (47,23)m 
+2.  	 UAV-BS’s position: (65,73,15)m
+
+"""question = """ Based on this information,  What speed is elevation angle?
+

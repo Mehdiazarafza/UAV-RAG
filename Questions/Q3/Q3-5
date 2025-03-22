@@ -1,0 +1,14 @@
+Consider this information:
+The profile drag coefficien (𝛿s) :0.012
+Air density (𝜌): 1.225 kg/m3
+Rotor solidity (𝑟𝑠): 0.4255
+Rotor disc area (𝐴): 0.1642 m2
+Blade angular velocity(𝐵𝑣 ): 942.5 rad/s
+Rotor radius(𝑅𝑟): 0.2286 m
+Incremental correction factor for induced power(𝜅): 0.1
+Aircraft weight(𝑊 ):161.5 Newton
+
+
+"""question = """ Based on this information,  compute the power consumption due to hovering of the UAV. give final result
+
+

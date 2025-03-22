@@ -1,0 +1,8 @@
+Consider this information:
+1.     Ground user’s position: (47,23)m 
+2.  	 UAV-BS’s position: (65,73,15)m
+3.  The LoS, and NLoS probability constants: 9.61, 0.16
+4. The additional path loss for LoS, and NLoS: 3 dB, and 23dB
+"""question = """ Based on this information,  Find the the average path loss between a ground user and UAV i
+
+

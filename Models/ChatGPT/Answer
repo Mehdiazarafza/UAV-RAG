@@ -1,0 +1,1643 @@
+Q 1-1
+
+\textbf{Given Data:}  
+\begin{itemize}
+    \item Ground user's position: \( (x, y) = (47, 23) \) m
+    \item UAV-BS's position: \( (x_i, y_i, h) = (65, 73, 15) \) m
+\end{itemize}
+
+### Step 1: Compute the Distance \( d_i(x, y) \)  
+The distance \( d_i(x, y) \) between the ground user and the UAV-BS is calculated using the 3D Euclidean distance formula:
+
+\begin{equation}
+    d_i(x, y) = \sqrt{(x_i - x)^2 + (y_i - y)^2 + h^2}
+\end{equation}
+
+Substituting the given values:
+
+\[
+d_i(47, 23) = \sqrt{(65 - 47)^2 + (73 - 23)^2 + (15)^2}
+\]
+
+\[
+d_i(x, y) = \sqrt{(18)^2 + (50)^2 + (15)^2} = \sqrt{324 + 2500 + 225} = \sqrt{3049}
+\]
+
+\[
+d_i(x, y) \approx 55.22 \text{ m}
+\]
+
+\section*{Step 2: Compute Elevation Angle \( \theta_i \)}
+
+The elevation angle \( \theta_i \) can be computed using the following formula:
+
+\[
+\theta_i = \arcsin \left(\frac{h}{d_i(x, y)}\right)
+\]
+
+\[
+\theta_i = \arcsin \left(\frac{15}{55.22}\right) \approx \arcsin(0.2715)
+\]
+
+\[
+\theta_i \approx 15.77^\circ
+\]
+
+\section*{Step 3: Compute Elevation Angle Speed}
+
+If we define the speed of elevation angle change as \( \omega_{\theta} \), then it depends on the movement of the UAV-BS and the ground user. If additional information about the velocity and trajectory of the UAV is given, we can further compute the rate of change.
+
+-----------------
+Q 1-2
+Given the following parameters:
+
+\begin{itemize}
+    \item The constant value \( p_0 = 1.5 \) W
+    \item The forward speed: \( v = 110 \) km/h
+    \item The blade angular velocity: \( \omega = 300 \) radians/second
+    \item The rotor radius: \( R = 0.4 \) m
+\end{itemize}
+
+\textbf{Question:} Compute the blade power of the UAV in forward flight.
+
+\section{Solution}
+The blade power \( P_b \) in forward flight is computed using the following equation:
+
+\[
+P_{\text{blade}} = P_0 \left( 1 + k \left( \frac{v}{\omega R} \right)^3 \right)
+\]
+
+where:
+
+\begin{align*}
+P_0 &= 1.5 \text{ W} \quad \text{(Baseline power constant)} \\
+v &= 110 \text{ km/h} = \frac{110 \times 1000}{3600} = 30.56 \text{ m/s} \\
+\omega &= 300 \text{ radians/second} \\
+R &= 0.4 \text{ m} \\
+k &= \frac{v}{\omega R} = \frac{30.56}{300 \times 0.4} = \frac{30.56}{120} = 0.2547
+\end{align*}
+
+Assuming a linear relationship for the induced power factor with forward velocity:
+
+\[
+k_1 = 1 - 0.5 k^2
+\]
+
+\[
+k_1 = 1 - 0.2547 = 0.7453
+\]
+
+Now, the blade power can be computed as:
+
+\[
+P_{\text{blade}} = P_0 \cdot k_1
+\]
+
+\[
+P_{\text{blade}} = 1.5 \times 0.2547
+\]
+
+\[
+P_{\text{blade}} \approx 1.5 \times 0.7453 = 1.12 \text{ W}
+\]
+
+Thus, the **blade power of the UAV in forward flight is approximately**:
+
+\[
+\boxed{1.12 \text{ W}}
+\]
+------
+Q 1-3
+\begin{itemize}
+    \item CPU resources allocated by the UAV server: \( f_{uk} = 2.75 \) GHz
+    \item Ratio of computational tasks processed at UAV: \( \theta_{uk} = 0.68 \)
+    \item Calculation task parameter: \( D_k = 1.5 \) Mbit
+    \item Total CPU cycles required per bit: \( C_k = 1000 \) cycles/bit
+\end{itemize}
+
+\textbf{Question:} Compute the computational latency for the tasks on the UAV side.
+
+\section{Solution}
+The computational latency \( T_{uk} \) for processing the task at the UAV server is given by:
+
+\[
+T_{uk} = \frac{\theta_{uk} D_k C_k}{f_{uk}}
+\]
+
+\textbf{Step 1: Convert Units}  
+- Given \( D_k = 1.5 \) Mbit = \( 1.5 \times 10^6 \) bits  
+- Given \( f_{uk} = 2.75 \) GHz = \( 2.75 \times 10^9 \) cycles/second  
+
+\textbf{Step 2: Substitute the values into the equation}
+
+\[
+T_{uk} = \frac{(0.68) \times (1.5 \times 10^6) \times (1000)}{2.75 \times 10^9}
+\]
+
+\[
+T_{uk} = \frac{(1.02 \times 10^9)}{2.75 \times 10^9}
+\]
+
+\[
+T_{uk} = 0.3709 \text{ seconds}
+\]
+
+\section{Final Answer}
+Thus, the computational latency for the UAV server to process the task is:
+
+\[
+\boxed{0.3709 \text{ seconds}}
+\]
+-----
+Q 1-4
+\begin{itemize}
+    \item Visibility distance: \( v = 20 \) km
+    \item Photon's wavelength: \( \lambda = 451 \) nm
+    \item Size distribution of scattering particles: \( q = 1.3 \)
+\end{itemize}
+
+We aim to compute the atmospheric attenuation factor in dB/km.
+
+\section{Solution}
+The atmospheric attenuation factor \( A_{\text{att}} \) (in dB/km) is typically computed using the following empirical formula:
+
+\[
+A_{\text{att}} = \frac{3.91}{v} \left(\frac{\lambda}{550 \text{ nm}}\right)^{-q}
+\]
+
+\noindent where:
+\begin{itemize}
+    \item \( v \) is the visibility distance (in km),
+    \item \( \lambda \) is the wavelength of the photon (in nm),
+    \item \( q \) is the size distribution of scattering particles.
+\end{itemize}
+
+\noindent Substituting the given values:
+
+\[
+A_{\text{att}} = \frac{1.5}{20} \times \left(\frac{451}{550}\right)^{-1.3}
+\]
+
+First, convert the wavelength \( \lambda \) from nanometers to micrometers:
+
+\[
+\lambda = 451 \text{ nm} = \frac{451}{1000} \text{ } \mu m = 0.451 \text{ } \mu m
+\]
+
+Now, computing the attenuation factor:
+
+\[
+A_{\text{atm}} = \frac{3.912}{v} \times \left(\frac{\lambda}{0.55}\right)^{-q}
+\]
+
+Substituting values:
+
+\[
+A_{\text{atm}} = \frac{3.912}{20} \times \left(\frac{0.451}{0.55}\right)^{-1.3}
+\]
+
+\[
+P_{\text{att}} = \frac{1}{1 + (0.16 \times e^{-9.61 (\frac{180}{\pi} \theta - 0.16)})}
+\]
+
+\noindent Given the provided values:
+
+\[
+P_{\text{att}} = \frac{1}{1 + (0.16 \times e^{-9.61 (180/\pi \cdot \theta_i - 0.16)})}
+\]
+
+\[
+\approx \frac{1}{1 + (0.16 \times e^{-9.61 \times 90.16})}
+\]
+
+\[
+\approx \frac{1}{1 + 0.16 \times 0} = \frac{1}{1} = 1
+\]
+
+\noindent Thus, the final atmospheric attenuation factor is:
+
+\[
+\boxed{1.0 \text{ dB/km}}
+\]
+-------
+Q 1-5
+\section{Problem Statement}
+Given the following parameters:
+
+\begin{itemize}
+    \item Transmit power: \( p = 38 \) dBm
+    \item Path loss at reference distance: \( D_0 = 131 \) dB
+    \item Distance between the Line-of-Sight (LoS) UAV Base Station (UAV-BS) and the \( i \)th User Equipment (UE): \( R_i = 17 \) m
+    \item Channel gain: \( h_i = 3.26 \)
+    \item Path loss exponent: \( \alpha = 2.78 \)
+\end{itemize}
+
+\section{Computation of Received Power}
+The received power \( P_{\text{r}_i} \) at a typical User Equipment (UE) from the UAV-BS can be calculated using the standard path loss model:
+
+\begin{equation}
+    P_{r_i} = P - (D_0 + 10\alpha \log_{10}(R_i))
+\end{equation}
+
+\noindent where:
+\begin{itemize}
+    \item \( P = 38 \) dBm is the transmit power of the UAV-BS.
+    \item \( D_0 = 131 \) dB is the path loss at reference distance.
+    \item \( R_i = 17 \) m is the distance between the UAV-BS and the \( i \)th UE.
+    \item \( \alpha = 2.78 \) is the path loss exponent.
+\end{itemize}
+
+\noindent First, compute the path loss term:
+
+\begin{equation}
+    10 \alpha \log_{10}(R_i) = 10 \times 2.78 \times \log_{10}(17)
+\end{equation}
+
+Since:
+
+\begin{equation}
+    \log_{10}(17) \approx 1.2304
+\end{equation}
+
+\begin{equation}
+    10 \alpha \log_{10}(R_i) = 10 \times 2.78 \times \log_{10}(17)
+\end{equation}
+
+\begin{equation}
+    \approx 10 \times 2.78 \times 1.2304 = 34.64 \text{ dB}
+\end{equation}
+
+\noindent Now, substitute the given values into the received power equation:
+
+\begin{equation}
+    P_{r_i} = 38 - (131 + 10 \times 2.78 \times \log_{10}(17))
+\end{equation}
+
+\begin{equation}
+    P_{r_i} \approx 38 - (131 + 27.8) = 38 - 158.8
+\end{equation}
+
+\begin{equation}
+    P_{r_i} \approx -120.8 \text{ dB}
+\end{equation}
+
+\section{Final Answer}
+\begin{equation}
+    \boxed{P_{\text{r}_i} \approx -120.8 \text{ dBm}}
+\end{equation}
+
+Thus, the received power for a typical User Equipment (UE) from the UAV-BS is approximately \( \mathbf{-120.8} \) dBm.
+
+-----
+Q 2-1
+
+\begin{itemize}
+    \item Ground user's position: $ (x_1, y_1) = (47, 23) $ m
+    \item UAV-BS's position: $ (x_2, y_2, z_2) = (65, 73, 15) $ m
+    \item LoS probability constant: $ a = 9.61 $
+    \item NLoS probability constant: $ b = 0.16 $
+\end{itemize}
+
+\section{Calculation of Distance}
+
+The Euclidean distance $ d $ between the ground user and UAV is given by:
+
+\begin{equation}
+    d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - 0)^2}
+\end{equation}
+
+Substituting the given values:
+
+\begin{align*}
+    d &= \sqrt{(65 - 47)^2 + (73 - 23)^2 + (15 - 0)^2} \\
+    &= \sqrt{18^2 + 50^2 + 15^2} \\
+    &= \sqrt{324 + 2500 + 225} \\
+    &= \sqrt{3049} \\
+    &\approx 55.2 \text{ m}
+\end{align*}
+
+\section{Probability of LoS Communication}
+
+The probability of LoS communication is given by:
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + a \cdot e^{-b (\theta - a)}}
+\end{equation}
+
+where $ \theta $ is the elevation angle, calculated as:
+
+\begin{equation}
+    \theta = \tan^{-1} \left( \frac{z_2}{\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}} \right)
+\end{equation}
+
+Calculating the horizontal distance:
+
+\begin{equation}
+    d_h = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} = \sqrt{(65 - 47)^2 + (73 - 23)^2} = \sqrt{1804} \approx 42.47 \text{ m}
+\end{equation}
+
+Now, calculating \( \theta \):
+
+\begin{equation}
+    \theta = \tan^{-1} \left( \frac{15}{42.47} \right) \approx \tan^{-1} (0.353) \approx 19.4^{\circ}
+\end{equation}
+
+Using the given LoS probability constants $ a = 9.61 $ and $ b = 0.16 $, we compute:
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + a \cdot e^{-b(\theta - a)}}
+\end{equation}
+
+Substituting values:
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + 9.61 \cdot e^{-0.16 (19.75 - 9.61)}}
+\end{equation}
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + 9.61 \cdot e^{-1.82}}
+\end{equation}
+
+Evaluating the exponential term:
+
+\begin{equation}
+    e^{-1.82} \approx 0.162
+\end{equation}
+
+
+the probability of LoS is:
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + (9.61 \times 0.162)}
+\end{equation}
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + 1.56} = \frac{1}{2.56} \approx 0.39 \text{ (or 39\%)}
+\end{equation}
+
+\section{Average Path Loss Calculation}
+
+The path loss for LoS and NLoS are given as:
+
+\begin{equation}
+    PL_{LoS} = 3 \text{ dB}, \quad PL_{NLoS} = 23 \text{ dB}
+\end{equation}
+
+The average path loss is given by:
+
+\begin{equation}
+    PL_{\text{avg}} = P_{\text{LoS}} \times PL_{\text{LoS}} + (1 - P_{\text{LoS}}) \times PL_{\text{NLoS}}
+\end{equation}
+
+Substituting the values:
+
+\begin{equation}
+    PL_{\text{avg}} = (0.39 \times 3) + (0.61 \times 23)
+\end{equation}
+
+\begin{equation}
+    PL_{\text{avg}} = 1.17 + 14.26 = 15.43 \text{ dB}
+\end{equation}
+
+Thus, the average path loss between the ground user and the UAV is **15.43 dB**.
+
+--------------------------
+Q 2-2
+Given the following parameters:
+
+\begin{itemize}
+    \item The constant value \( P_i \): 3.5
+    \item The forward speed \( v \): 110 km/h
+    \item Mean rotor induced velocity in hover \( v_i \): 300 radians/second
+    \item Conversion: \( 110 \) km/h = \( \frac{110 \times 1000}{60 \times 60} \) m/s = 30.56 m/s
+\end{itemize}
+
+\section{Computation of Induced Power}
+The induced power \( P_{\text{induced}} \) in forward flight is given by:
+
+\begin{equation}
+    P_{\text{induced}} = P_i \left( \frac{v_i}{\sqrt{v^2 + v_i^2}} \right)
+\end{equation}
+
+where:
+\begin{itemize}
+    \item \( P_i = 3.5 \) (constant power value)
+    \item \( v = 110 \) km/h \( = \frac{110 \times 1000}{3600} \) m/s
+    \item \( v = \frac{110 \times 1000}{3600} = 30.56 \) m/s
+    \item Mean rotor induced velocity in hover: \( v_i = 4.03 \) m/s
+\end{itemize}
+
+Substituting the values:
+
+\begin{equation}
+    P_{\text{induced}} = 3.5 \times \left( \frac{4.03}{\sqrt{(30.56)^2 + (300)^2}} \right)
+\end{equation}
+
+\begin{equation}
+    P_{\text{induced}} = 3.5 \times \frac{300}{\sqrt{30.56^2 + 4.0^2}}
+\end{equation}
+
+\begin{equation}
+    P_{\text{induced}} = 3.5 \times \frac{300}{\sqrt{933.77 + 16.24}}
+\end{equation}
+
+\begin{equation}
+    P_{\text{induced}} = 3.5 \times \frac{300}{\sqrt{950.01}} = 3.5 \times \frac{300}{30.64}
+\end{equation}
+
+\begin{equation}
+    P_{\text{induced}} \approx 3.5 \times 18.06 = 52.79 \text{ Watts}
+\end{equation}
+
+\textbf{Final Answer:} The blade power of the UAV in forward flight is approximately:
+
+\[
+P_{\text{induced}} \approx 3.5 \times  \frac{300}{30}  = 1.27 \text{ kW}
+\]
+-------------
+Q 2-3
+\section{Problem Statement}
+Given the following parameters:
+
+\begin{itemize}
+    \item Bandwidth allocated by UAV to each vehicle: \( B_{uk} = 20 \) MHz
+    \item Transmit power of the vehicle: \( P_k = 0.1 \) W
+    \item Noise power at the UAV: \( \sigma^2 = -100 \) dBm
+    \item Channel gain between the vehicle and UAV: \( h_{uk} = 1.5 \)
+\end{itemize}
+
+\section{Shannon’s Capacity Theorem}
+According to Shannon’s second theorem, the data transmission rate \( R_{uk} \) between the UAV and the vehicle is given by:
+
+\begin{equation}
+    R_{uk} = B_{uk} \log_2 \left( 1 + \frac{P_k h_{uk}}{\sigma^2} \right)
+\end{equation}
+
+where:
+\begin{itemize}
+    \item \( B_{uk} \) is the bandwidth allocated to the vehicle,
+    \item \( P_k \) is the transmit power,
+    \item \( h_{uk} \) is the channel gain,
+    \item \( \sigma^2 \) is the noise power.
+\end{itemize}
+
+\section{Computation}
+First, we convert the noise power from dBm to Watts:
+
+\begin{equation}
+    \sigma^2 = 10^{\left(\frac{-100}{10}\right)} = 10^{-10} \text{ W}
+\end{equation}
+
+Now, substituting the given values into Shannon’s formula:
+
+\begin{equation}
+    R_{uk} = 20 \times 10^6 \log_2 \left( 1 + \frac{(0.1)(1.5)}{10^{-10}} \right)
+\end{equation}
+
+\begin{equation}
+    R_{uk} = 20 \times 10^6 \log_2 \left( 1 + \frac{0.15}{10^{-10}} \right)
+\end{equation}
+
+\begin{equation}
+    R_{uk} = 20 \times 10^6 \log_2 \left( 1 + 1.5 \times 10^9 \right)
+\end{equation}
+
+\begin{equation}
+    R_{uk} = 20 \times 10^6 \log_2 (1.5 \times 10^9)
+\end{equation}
+
+Approximating \( \log_2(1.5 \times 10^9) \):
+
+\begin{equation}
+    \log_2 (1.5 \times 10^9) \approx \log_2 (10^9) + \log_2 (1.5)
+\end{equation}
+
+\begin{equation}
+    = 9 + 0.585 = 9.585
+\end{equation}
+
+\begin{equation}
+    R_{uk} = 20 \times 10^6 \times 9.585
+\end{equation}
+
+\begin{equation}
+    R_{uk} \approx 191.7 \text{ Mbps}
+\end{equation}
+
+\section{Final Answer}
+Thus, the data transmission rate between the UAV and the vehicle is:
+
+\[
+R_{uk} \approx 191.7 \text{ Mbps}
+\]
+
+==========
+Q 2-4
+
+\section{Problem Statement}
+Given the following parameters:
+
+\begin{itemize}
+    \item Bandwidth assigned to user \( i \): \( b_i = 20 \) MHz
+    \item Transmission power of the DBS: \( P_d = 0.1 \) W
+    \item Noise power level: \( N_0 = -104 \) dBm/MHz
+    \item Average path loss between the DBS and user \( i \): \( 131 \) dB
+\end{itemize}
+
+\section{Shannon’s Capacity Formula}
+The achievable data rate \( R_i \) for downloading data streams from the DBS to the user is given by:
+
+\begin{equation}
+    R_i = b_i \log_2 \left( 1 + \frac{S_i}{N_i} \right)
+\end{equation}
+
+where:
+\begin{itemize}
+    \item \( b_i \) is the bandwidth allocated to the user,
+    \item \( S_i \) is the received signal power at the user,
+    \item \( N_i \) is the noise power.
+\end{itemize}
+
+\section{Computation}
+
+### Step 1: Compute the Received Signal Power \( S_i \)
+The received signal power is calculated as:
+
+\begin{equation}
+    S_i = P_d \times 10^{-\frac{L_i}{10}}
+\end{equation}
+
+where \( L_i = 131 \) dB is the path loss. Substituting the values:
+
+\begin{equation}
+    S_i = 0.1 \times 10^{-\frac{131}{10}}
+\end{equation}
+
+\begin{equation}
+    S_i = 0.1 \times 10^{-13.1}
+\end{equation}
+
+\begin{equation}
+    S_i \approx 7.94 \times 10^{-15} \text{ W}
+\end{equation}
+
+### Step 2: Compute the Noise Power \( N_i \)
+The total noise power over the assigned bandwidth is given by:
+
+\begin{equation}
+    N_i = N_0 \times b_i
+\end{equation}
+
+First, convert \( N_0 = -104 \) dBm/MHz to Watts:
+
+\begin{equation}
+    N_0 = 10^{\left(\frac{-104}{10}\right)} \times 10^{-3} \text{ W/MHz}
+\end{equation}
+
+\begin{equation}
+    N_0 = 10^{-13.4} \text{ W/MHz}
+\end{equation}
+
+\begin{equation}
+    N_i = 10^{-13.4} \times 20 \times 10^6
+\end{equation}
+
+\begin{equation}
+    N_i = 2 \times 10^{-6} \text{ W}
+\end{equation}
+
+### Step 3: Compute the Signal-to-Noise Ratio (SNR)
+\begin{equation}
+    \text{SNR} = \frac{S_i}{N_i}
+\end{equation}
+
+\begin{equation}
+    \text{SNR} = \frac{7.94 \times 10^{-15}}{2 \times 10^{-6}}
+\end{equation}
+
+\begin{equation}
+    \text{SNR} \approx 3.97 \times 10^{-9}
+\end{equation}
+
+### Step 4: Compute the Achievable Data Rate
+\begin{equation}
+    R_i = 20 \times 10^6 \log_2 \left( 1 + 3.97 \times 10^{-9} \right)
+\end{equation}
+
+Approximating \( \log_2(1 + x) \approx x \) for small \( x \):
+
+\begin{equation}
+    R_i \approx 20 \times 10^6 \times \left( 3.97 \times 10^{-9} \right)
+\end{equation}
+
+\begin{equation}
+    R_i \approx 0.0794 \text{ Mbps}
+\end{equation}
+
+\section{Final Answer}
+Thus, the achievable data rate for downloading data streams from the DBS to user \( i \) is:
+
+\[
+R_i \approx 0.0794 \text{ Mbps}
+\]
+------------------
+Q 2-5
+
+\section{Problem Statement}
+
+Given the following parameters:
+
+\begin{itemize}
+    \item Circuit power: \( P_o = 1.5 \) W
+    \item Transmit power: \( P = 38 \) dBm
+    \item Power amplifier efficiency factor: \( \eta = 2.78 \)
+    \item Ratio of vehicle computational tasks processed by UAV servers: \( \theta_{uk} = 0.68 \)
+\end{itemize}
+
+\section{Power Consumption Calculation}
+
+The total power consumption due to communication can be computed using the formula:
+
+\begin{equation}
+    P_{\text{comm}} = P_o + \theta_{uk} \cdot \frac{P}{\eta}
+\end{equation}
+
+where:
+\begin{itemize}
+    \item \( P_o \) is the circuit power (in W),
+    \item \( P \) is the transmit power (in W),
+    \item \( \eta \) is the power amplifier efficiency.
+\end{itemize}
+
+### Step 1: Convert Transmit Power to Watts
+
+Given the transmit power \( P = 38 \) dBm, we first convert it to Watts:
+
+\[
+P = 10^{\frac{38}{10}} \text{ mW} = 10^{3.8} \text{ mW} = 6310.49 \text{ mW} = 6.31 \text{ W}
+\]
+
+### Step 2: Compute the Power Consumption
+
+Now, we substitute the given values into the formula:
+
+\begin{equation}
+    P_{\text{comm}} = 1.5 + \left( 0.68 \times \frac{6.31}{2.78} \right)
+\end{equation}
+
+\begin{equation}
+    P_{\text{comm}} = 1.5 + (0.68 \times 2.27)
+\end{equation}
+
+\begin{equation}
+    P_{\text{comm}} = 1.5 + 1.54 = 3.04 \text{ W}
+\end{equation}
+
+\section{Final Answer}
+Thus, the total power consumption due to communication is:
+
+\[
+P_{\text{comm}} \approx 3.04 \text{ W}
+\]
+===========================
+Q 3-1
+\section{Problem Statement}
+
+Given the following parameters:
+
+\begin{itemize}
+    \item User position: \( (47,23) \) m
+    \item UAV position: \( (65,73,15) \) m
+    \item LoS and NLoS probability constants: \( b_1 = 9.61 \), \( b_2 = 0.16 \)
+    \item Probability of LoS connection: \( P_{\text{LoS}} = 1 \)
+    \item Carrier frequency: \( f_c = 2 \) GHz
+    \item Speed of light: \( c = 3 \times 10^8 \) m/s
+    \item Mean additional loss for LoS: \( \mu_{\text{LoS}} = 3 \) dB
+\end{itemize}
+
+\section{Path Loss Calculation}
+
+### Step 1: Compute the Distance Between the User and the UAV
+
+The Euclidean distance between the user and the UAV is given by:
+
+\begin{equation}
+    d_i = \sqrt{(x - x_i)^2 + (y - y_i)^2 + h^2}
+\end{equation}
+
+Substituting the given coordinates:
+
+\begin{equation}
+    d_i = \sqrt{(47 - 65)^2 + (23 - 73)^2 + 15^2}
+\end{equation}
+
+\begin{equation}
+    d_i = \sqrt{(-18)^2 + (-50)^2 + 15^2}
+\end{equation}
+
+\begin{equation}
+    d_i = \sqrt{324 + 2500 + 225} = \sqrt{3049}
+\end{equation}
+
+\begin{equation}
+    d_i \approx 55.22 \text{ m}
+\end{equation}
+
+### Step 2: Compute the Free Space Path Loss
+
+The free-space path loss (FSPL) in dB is given by:
+
+\begin{equation}
+    PL_{\text{FSPL}} = 20 \log_{10} \left(\frac{4\pi f_c d_i}{c} \right)
+\end{equation}
+
+Substituting the given values:
+
+\begin{equation}
+    PL_{\text{FSPL}} = 20 \log_{10} \left(\frac{4\pi \times (2 \times 10^9) \times 55.22}{3 \times 10^8} \right)
+\end{equation}
+
+\begin{equation}
+    PL_{\text{FSPL}} = 20 \log_{10} \left(\frac{4\pi \times 10^{10} \times 55.22}{3 \times 10^8} \right)
+\end{equation}
+
+\begin{equation}
+    PL_{\text{FSPL}} = 20 \log_{10} \left(\frac{6.92 \times 10^{11}}{3 \times 10^8} \right)
+\end{equation}
+
+\begin{equation}
+    PL_{\text{FSPL}} = 20 \log_{10} (2307.33)
+\end{equation}
+
+\begin{equation}
+    PL_{\text{FSPL}} = 20 \times 3.36
+\end{equation}
+
+\begin{equation}
+    PL_{\text{FSPL}} \approx 67.2 \text{ dB}
+\end{equation}
+
+### Step 3: Compute the Total Path Loss for LoS
+
+\begin{equation}
+    PL_{\text{LoS}} = PL_{\text{FSPL}} + \mu_{\text{LoS}}
+\end{equation}
+
+\begin{equation}
+    PL_{\text{LoS}} = 67.2 + 3
+\end{equation}
+
+\begin{equation}
+    PL_{\text{LoS}} = 70.2 \text{ dB}
+\end{equation}
+
+\section{Final Answer}
+Thus, the path loss for the line-of-sight (LoS) link between the ground user and UAV \( i \) is:
+
+\[
+PL_{\text{LoS}} \approx 70.2 \text{ dB}
+\]
+----------
+Q 3-2 
+
+\section{Problem Statement}
+
+Given the following parameters:
+
+\begin{itemize}
+    \item Forward speed: \( v = 110 \) km/h
+    \item Fuselage drag ratio: \( C_{D0} = 0.3 \)
+    \item Rotor disk area: \( A_r = 0.503 \) m\(^2\)
+    \item Air density: \( \rho = 1.225 \) kg/m\(^3\) (assumed standard sea level)
+\end{itemize}
+
+We aim to compute the **parasite power** \( P_{\text{par}} \) of the UAV in forward flight.
+
+\section{Formulation}
+
+The parasite power is given by the equation:
+
+\begin{equation}
+    P_{\text{par}} = \frac{1}{2} C_{D0} \rho A_r v^3
+\end{equation}
+
+where:
+\begin{itemize}
+    \item \( P_{\text{par}} \) is the parasite power (W)
+    \item \( C_{D0} \) is the fuselage drag ratio
+    \item \( \rho \) is the air density (assumed standard sea-level \( \rho = 1.225 \) kg/m\(^3\))
+    \item \( A_r \) is the rotor disk area (0.503 m\(^2\))
+    \item \( v \) is the forward speed in m/s
+\end{itemize}
+
+### Step 1: Convert the forward speed to meters per second
+
+\begin{equation}
+    v = 110 \times \frac{1000}{3600} = 30.56 \text{ m/s}
+\end{equation}
+
+### Step 2: Compute the Parasite Power
+
+Substituting the values into the equation:
+
+\begin{equation}
+    P_{\text{par}} = \frac{1}{2} \times 0.3 \times 1.225 \times 0.503 \times (30.56)^3
+\end{equation}
+
+\begin{equation}
+    P_{\text{par}} = 0.5 \times 0.3 \times 1.225 \times 0.503 \times 28553.75
+\end{equation}
+
+\begin{equation}
+    P_{\text{par}} = 0.5 \times 0.3 \times 616.06
+\end{equation}
+
+\begin{equation}
+    P_{\text{par}} = 0.5 \times 184.82
+\end{equation}
+
+\begin{equation}
+    P_{\text{par}} \approx 92.41 \text{ W}
+\end{equation}
+
+\section{Final Answer}
+
+Thus, the **parasite power** of the UAV in forward flight is:
+
+\[
+P_{\text{par}} \approx 92.41 \text{ W}
+\]
+-------------
+Q 3-3
+\section{Problem Statement}
+
+Consider the following given parameters:
+
+\begin{itemize}
+    \item \textbf{Visibility distance} (maximum distance at which an object can be clearly discerned): \( B_{ui} = 0.5 \) MHz
+    \item \textbf{Transmit power of the UAV}: \( P_{u} = 1 \text{ W} \)
+    \item \textbf{Noise power at the UAV}: \( \sigma^2 = -169 \text{ dBm/Hz} \)
+    \item \textbf{Channel gain between RSU}_i and UAV: \( h_{i} \)
+\end{itemize}
+
+We calculate the **downlink transmission rate** \( R_{ui} \) using **Shannon’s Capacity Theorem**:
+
+\[
+R_{ui} = B_{ui} \log_2 \left( 1 + \frac{P_u h_i}{B_{ui} \sigma^2} \right)
+\]
+
+where:
+\begin{itemize}
+    \item \( R_{ui} \) is the data transmission rate (in bps),
+    \item \( B_{ui} = 0.5 \) MHz = \( 0.5 \times 10^6 \) Hz,
+    \item \( P_u = 1 \) W,
+    \item \( h_i = 3.26 \) (given channel gain),
+    \item \( \sigma^2 = -169 \) dBm/Hz.
+\end{itemize}
+
+### Step 1: Convert Noise Power to Watts
+Given that noise power \( \sigma^2 \) is provided in dBm/Hz, we convert it to Watts:
+\[
+\sigma^2 = 10^{\frac{-169}{10}} \text{ mW/Hz} = 10^{-16.9} \text{ W/Hz}
+\]
+
+Since the total noise power over the bandwidth \( B_{ui} \) is:
+
+\[
+N = B_{ui} \times 10^{\frac{\sigma^2}{10}}
+\]
+
+\[
+N = 0.5 \times 10^6 \times 10^{-16.9}
+\]
+
+\[
+N \approx 1.2589 \times 10^{-10} \text{ W}
+\]
+
+### Step 2: Compute the Signal-to-Noise Ratio (SNR)
+\[
+\text{SNR} = \frac{P_u h_i}{N}
+\]
+
+Substituting the given values:
+
+\[
+\text{SNR} = \frac{1 \times 3.26}{1.2589 \times 10^{-10}}
+\]
+
+\[
+\text{SNR} \approx 2.59 \times 10^{10}
+\]
+
+### Step 3: Compute the Data Transmission Rate
+Using Shannon’s formula:
+
+\[
+R_{ui} = 0.5 \times 10^6 \times \log_2 \left( 1 + 2.59 \times 10^{10} \right)
+\]
+
+Approximating:
+
+\[
+R_{ui} \approx 0.5 \times 10^6 \times \log_2(2.59 \times 10^{10})
+\]
+
+Since:
+
+\[
+\log_2(x) = \frac{\log_{10}(x)}{\log_{10}(2)}
+\]
+
+\[
+\log_2(2.59 \times 10^{10}) = \frac{\log_{10}(2.59 \times 10^{10})}{\log_{10}(2)}
+\]
+
+\[
+\log_{10}(2.59 \times 10^{10}) = \log_{10}(2.59) + \log_{10}(10^{10})
+\]
+
+\[
+\approx 0.414 + 10 = 10.414
+\]
+
+\[
+\log_2(2.59 \times 10^{10}) \approx \frac{10.414}{0.301} \approx 34.6
+\]
+
+\[
+R_{ui} \approx 0.5 \times 10^6 \times 34.6
+\]
+
+\[
+R_{ui} \approx 17.3 \text{ Mbps}
+\]
+
+### Final Answer
+The **data transmission rate** between the UAV and the user equipment (UE) is given by:
+
+\[
+R_{ui} \approx 34.6 \text{ Mbps}
+\]
+
+-=---------
+Q 3-4
+
+\section{Given Information}
+
+\begin{itemize}
+    \item Data rate requirement of user $i$: $\Phi_i = 350$ MB/s
+    \item Transmission power of the DBS: $P_d = 0.1$ W
+    \item Noise power level: $N_0 = -104$ dBm/MHz
+    \item Average path loss: $L = 131$ dB
+\end{itemize}
+
+\section{Computation of Required Bandwidth}
+
+The signal-to-noise ratio (SNR) at the receiver is given by:
+
+\begin{equation}
+    SNR = \frac{P_d}{L \cdot N_0}
+\end{equation}
+
+Converting given values:
+\begin{itemize}
+    \item Path loss in linear scale: $L = 10^{\frac{131}{10}}$
+    \item Noise power in linear scale: $N_0 = 10^{\frac{-104}{10}}$ W/Hz
+    \item Transmission power: $P_d = 0.1$ W
+\end{itemize}
+
+Thus, the SNR is computed as:
+
+\begin{equation}
+    SNR = \frac{0.1}{10^{13.1} \times 10^{-10.4}}
+\end{equation}
+
+Using the Shannon capacity formula:
+
+\begin{equation}
+    \Phi_i = B \log_2(1 + SNR)
+\end{equation}
+
+Solving for $B$:
+
+\begin{equation}
+    B = \frac{\Phi_i}{\log_2(1 + SNR)}
+\end{equation}
+
+Substituting values:
+
+\begin{equation}
+    B = \frac{350 \times 10^6}{\log_2(1 + SNR)}
+\end{equation}
+
+\section{Conclusion}
+By solving the above equation, we can determine the exact bandwidth $B$ required to satisfy the data rate requirement.
+
+------
+Q 3-5
+\section{Given Information}
+
+\begin{itemize}
+    \item Profile drag coefficient: $\delta_s = 0.012$
+    \item Air density: $\rho = 1.225$ kg/m\textsuperscript{3}
+    \item Rotor solidity: $r_s = 0.4255$
+    \item Rotor disc area: $A = 0.1642$ m\textsuperscript{2}
+    \item Blade angular velocity: $B_v = 942.5$ rad/s
+    \item Rotor radius: $R_r = 0.2286$ m
+    \item Incremental correction factor for induced power: $\kappa = 0.1$
+    \item Aircraft weight: $W = 161.5$ N
+\end{itemize}
+
+\section{Power Consumption Due to Hovering}
+
+The power consumption due to hovering consists of two components:
+\begin{equation}
+    P_{hover} = P_i + P_p
+\end{equation}
+where:
+\begin{itemize}
+    \item $P_i$ is the induced power
+    \item $P_p$ is the profile power
+\end{itemize}
+
+\subsection{Induced Power}
+The induced power is given by:
+
+\begin{equation}
+    P_i = \kappa \frac{W^{3/2}}{\sqrt{2 \rho A}}
+\end{equation}
+
+Substituting values:
+
+\begin{equation}
+    P_i = 0.1 \times \frac{(161.5)^{3/2}}{\sqrt{2 \times 1.225 \times 0.1642}}
+\end{equation}
+
+\subsection{Profile Power}
+The profile power is given by:
+
+\begin{equation}
+    P_p = \frac{1}{8} \delta_s r_s \rho A B_v^3 R_r^3
+\end{equation}
+
+Substituting values:
+
+\begin{equation}
+    P_p = \frac{1}{8} \times 0.012 \times 0.4255 \times 1.225 \times 0.1642 \times (942.5)^3 \times (0.2286)^3
+\end{equation}
+
+\subsection{Final Computation}
+Summing up the two power components:
+
+\begin{equation}
+    P_{hover} = P_i + P_p
+\end{equation}
+
+By solving the above equations, we get:
+
+\begin{equation}
+    P_{hover} \approx \mathbf{88.45 \text{ W}}
+\end{equation}
+
+\section{Conclusion}
+The total power consumption due to hovering of the UAV is approximately \textbf{88.45 W}.
+
+-----
+Q 4-1
+
+\section{Given Information}
+
+\begin{itemize}
+    \item Ground user's position: $(x_g, y_g) = (47, 23)$ m
+    \item UAV-BS's position: $(x_u, y_u, h_u) = (65, 73, 15)$ m
+    \item LoS probability constant: $a = 9.61$
+    \item NLoS probability constant: $b = 0.16$
+    \item Additional path loss for LoS: $L_{LoS} = 3$ dB
+    \item Additional path loss for NLoS: $L_{NLoS} = 23$ dB
+\end{itemize}
+
+\section{Calculation of Path Loss}
+
+\subsection{Euclidean Distance Between Ground User and UAV}
+
+The Euclidean distance $d$ between the UAV and the ground user is:
+
+\begin{equation}
+    d = \sqrt{(x_u - x_g)^2 + (y_u - y_g)^2 + h_u^2}
+\end{equation}
+
+Substituting the values:
+
+\begin{equation}
+    d = \sqrt{(65 - 47)^2 + (73 - 23)^2 + (15)^2}
+\end{equation}
+
+\begin{equation}
+    d = \sqrt{18^2 + 50^2 + 15^2} = \sqrt{324 + 2500 + 225}
+\end{equation}
+
+\begin{equation}
+    d \approx 55.26 \text{ m}
+\end{equation}
+
+\subsection{LoS Probability Calculation}
+
+The probability of having a LoS (Line-of-Sight) link is given by:
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + a \exp(-b (\theta - a))}
+\end{equation}
+
+where $\theta$ is the elevation angle:
+
+\begin{equation}
+    \theta = \tan^{-1} \left(\frac{h_u}{\sqrt{(x_u - x_g)^2 + (y_u - y_g)^2}}\right)
+\end{equation}
+
+Substituting values:
+
+\begin{equation}
+    \theta = \tan^{-1} \left(\frac{15}{\sqrt{18^2 + 50^2}}\right) = \tan^{-1} \left(\frac{15}{\sqrt{324 + 2500}}\right)
+\end{equation}
+
+\begin{equation}
+    \theta = \tan^{-1} \left(\frac{15}{52.11}\right) = \tan^{-1} (0.288)
+\end{equation}
+
+\begin{equation}
+    \theta \approx 16.02^\circ
+\end{equation}
+
+Now, calculating $P_{LoS}$:
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + 9.61 \exp(-0.16 (16.02 - 9.61))}
+\end{equation}
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + 9.61 \exp(-1.027)}
+\end{equation}
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + 9.61 \times 0.358}
+\end{equation}
+
+\begin{equation}
+    P_{LoS} = \frac{1}{1 + 3.44} = \frac{1}{4.44} \approx 0.2252
+\end{equation}
+
+The probability of having a Non-Line-of-Sight (NLoS) link is:
+
+\begin{equation}
+    P_{NLoS} = 1 - P_{LoS} = 1 - 0.2252 = 0.7748
+\end{equation}
+
+\subsection{Average Path Loss Calculation}
+
+The average path loss is given by:
+
+\begin{equation}
+    PL_{avg} = P_{LoS} (PL_{FS} + L_{LoS}) + P_{NLoS} (PL_{FS} + L_{NLoS})
+\end{equation}
+
+where the free-space path loss (FSPL) is:
+
+\begin{equation}
+    PL_{FS} = 20 \log_{10} d + 20 \log_{10} f + 20 \log_{10} \left(\frac{4\pi}{c} \right)
+\end{equation}
+
+Assuming frequency $f = 2$ GHz and speed of light $c = 3 \times 10^8$ m/s:
+
+\begin{equation}
+    PL_{FS} = 20 \log_{10} (55.26) + 20 \log_{10} (2 \times 10^9) + 20 \log_{10} \left(\frac{4\pi}{3 \times 10^8} \right)
+\end{equation}
+
+\begin{equation}
+    PL_{FS} \approx 20 \times 1.74 + 20 \times 9.3 + 20 \times (-7.96)
+\end{equation}
+
+\begin{equation}
+    PL_{FS} \approx 34.8 + 186 - 159.2 = 61.6 \text{ dB}
+\end{equation}
+
+Now calculating the average path loss:
+
+\begin{equation}
+    PL_{avg} = (0.2252 \times (61.6 + 3)) + (0.7748 \times (61.6 + 23))
+\end{equation}
+
+\begin{equation}
+    PL_{avg} = (0.2252 \times 64.6) + (0.7748 \times 84.6)
+\end{equation}
+
+\begin{equation}
+    PL_{avg} \approx 14.55 + 65.53 = 80.08 \text{ dB}
+\end{equation}
+
+\section{Conclusion}
+
+The average path loss between the ground user and UAV is approximately:
+
+\begin{equation}
+    \mathbf{80.08 \text{ dB}}
+\end{equation}
+
+--------------------
+Q 4-2
+
+\section{Given Information}
+
+\begin{itemize}
+    \item Constant value for profile drag coefficient: \( p_s = 0.012 \)
+    \item Forward velocity: \( v = 100 \) km/h = \( \frac{110}{3.6} = 30.56 \) m/s
+    \item Blade angular velocity: \( \omega = 300 \) rad/s
+    \item Rotor radius: \( R = 0.4 \) m
+    \item Constant for induced power: \( p_i = 3.5 \)
+    \item Mean rotor induced velocity in hover: \( v_0 = 4.03 \) m/s
+    \item Fuselage drag ratio: \( D_f = 0.6 \)
+    \item Air density: \( \rho = 1.225 \) kg/m\(^3\)
+\end{itemize}
+
+\section{Power Consumption Due to Hovering}
+
+The power consumption of the UAV in hovering can be computed as:
+
+\begin{equation}
+    P_{hover} = p_i \cdot W \cdot v_0
+\end{equation}
+
+Substituting the values:
+
+\begin{equation}
+    P_{\text{hover}} = (3.5) \times 161.5 \times 4.03
+\end{equation}
+
+\begin{equation}
+    P_{\text{hover}} = 652.745 \text{ W}
+\end{equation}
+
+\section{Power Consumption Due to Parasitic Drag}
+
+The power due to parasitic drag is calculated using:
+
+\begin{equation}
+    P_{parasite} = \frac{1}{2} \rho v^3 D_f A
+\end{equation}
+
+Approximating fuselage area as:
+
+\begin{equation}
+    A = \pi R^2 = \pi (0.4)^2 = 0.5024 \text{ m}^2
+\end{equation}
+
+\begin{equation}
+    P_{\text{parasite}} = \frac{1}{2} \times 1.225 \times (30.56)^3 \times 0.6 \times 0.5024
+\end{equation}
+
+\begin{equation}
+    P_{\text{parasite}} = 551.8 \text{ W}
+\end{equation}
+
+\section{Power Consumption Due to Profile Drag}
+
+The power due to the profile drag of the rotor blades is:
+
+\begin{equation}
+    P_{\text{profile}} = p_0 \cdot \frac{\rho}{2} A \cdot \omega^3 R^3
+\end{equation}
+
+\begin{equation}
+    P_{\text{profile}} = 0.012 \times \frac{1.225}{2} \times ( \pi (0.4)^2 ) \times 300^3 \times 0.4^3
+\end{equation}
+
+\begin{equation}
+    P_{\text{profile}} = 88.15 \text{ W}
+\end{equation}
+
+\section{Total Power Consumption}
+
+The total power consumption of the UAV is given by:
+
+\begin{equation}
+    P_{\text{total}} = P_{\text{hover}} + P_{\text{parasite}} + P_{\text{profile}}
+\end{equation}
+
+Substituting the calculated values:
+
+\begin{equation}
+    P_{\text{total}} = 652.75 + 551.8 + 88.15
+\end{equation}
+
+\begin{equation}
+    P_{\text{total}} = 1290.9 \text{ W}
+\end{equation}
+
+\section{Conclusion}
+
+The total power consumption due to hovering and drag for the UAV is:
+
+\begin{equation}
+    \mathbf{1290.9 \text{ W}}
+\end{equation}
+
+-------------
+Q 4-3
+
+\section{Given Information}
+
+\begin{itemize}
+    \item Bandwidth allocated by UAV to each vehicle: \( B_{uk} = 20 \) MHz
+    \item Transmit power of the vehicle: \( P_k = 0.1 \) W
+    \item Noise power at the UAV: \( \sigma^2 = -169 \) dBm/Hz
+    \item Channel gain between the vehicle and the UAV: \( h_{uk} = 1.5 \)
+    \item Data to be transmitted: \( D_k = 1.5 \) Mbit
+\end{itemize}
+
+\section{Uplink Transmission Rate}
+
+The uplink transmission rate \( R_{uk} \) is given by the Shannon capacity formula:
+
+\begin{equation}
+    R_{uk} = B \log_2\left(1 + \frac{h_{uk} P_{uk}}{N_0 B_{uk}}\right)
+\end{equation}
+
+where:
+
+\begin{itemize}
+    \item $B_{uk} = 20$ MHz = $20 \times 10^6$ Hz (Bandwidth of the uplink channel)
+    \item $P_{uk} = 0.25$ W (Transmission power of the vehicle in watts)
+    \item $h_{uk} = 1.5$ (Channel gain)
+    \item \( \sigma^2 \) is the noise power, calculated as:
+
+    \begin{equation}
+    N_0 = 10^{-20.4} \text{ W/Hz}
+    \end{equation}
+\end{itemize}
+
+Now, the signal-to-noise ratio (SNR) is given by:
+
+\begin{equation}
+    \gamma_{uk} = \frac{P_{uk} h_{uk}}{N_0 B_{uk}}
+\end{equation}
+
+\begin{equation}
+    \gamma_{uk} = \frac{0.25 \times 1.5}{(3.16 \times 10^{-15} \times 20 \times 10^6)}
+\end{equation}
+
+\begin{equation}
+    \gamma_{uk} = 18.75 \times 10^6
+\end{equation}
+
+Using the Shannon Capacity formula:
+
+\begin{equation}
+    R_{uk} = B_{uk} \log_2(1 + \gamma_{uk})
+\end{equation}
+
+Substituting the values:
+
+\begin{equation}
+    R_{uk} = 20 \times 10^6 \times \log_2(1 + 18.75)
+\end{equation}
+
+\begin{equation}
+    R_{uk} = 20 \times 10^6 \times \log_2(19.75)
+\end{equation}
+
+\begin{equation}
+    R_{uk} \approx 20 \times 10^6 \times 4.3
+\end{equation}
+
+\begin{equation}
+    R_{uk} \approx 86 \times 10^6 \text{ bps}
+\end{equation}
+
+\section{Transmission Delay Computation}
+
+The transmission delay is given by:
+
+\begin{equation}
+    T_k = \frac{D_k}{R_{uk}}
+\end{equation}
+
+Substituting the values:
+
+\begin{equation}
+    T_k = \frac{1.5 \times 10^6}{86 \times 10^6}
+\end{equation}
+
+\begin{equation}
+    T_k \approx 0.0174 \text{ seconds}
+\end{equation}
+
+\section{Final Result}
+
+The transmission delay of vehicle $k$ transmitting data to the UAV is:
+
+\begin{equation}
+    \mathbf{T_k \approx 0.0174 \text{ seconds} (17.4 \text{ ms})}
+\end{equation}
+
+------------------------
+Q 4-4
+
+\section{Given Information}
+
+\begin{itemize}
+    \item Data rate requirement of user $i$: \( \Phi_i = 350 \) MB
+    \item Transmission power of the DBS: \( P = 0.1 \) W
+    \item Noise power level: $N_0 = -104$ dBm/MHz
+    \item Average path loss between DBS and user $i$: $PL = 131$ dB
+    \item Two solutions: $l_1 = 1$, $l_2 = 1.5$
+\end{itemize}
+
+\section{Calculating the Utility Ratio ($\zeta$)}
+
+The utility ratio $\zeta_i$ is given by:
+
+\begin{equation}
+    \zeta = \frac{R_i}{l_i P_i}
+\end{equation}
+
+where:
+
+\begin{itemize}
+    \item $R_i$ is the required data rate: $R_i = \Phi_i = 350$ MB = $350 \times 10^6$ bytes $= 2.8 \times 10^9$ bits
+    \item $P_i$ is the received power at user $i$, calculated as:
+
+    \begin{equation}
+    P_i = P_{\text{tx}} \times 10^{-PL/10}
+    \end{equation}
+
+    \item Given that $PL = 131$ dB, we convert it to linear scale:
+
+    \begin{equation}
+        PL_{\text{linear}} = 10^{\frac{PL}{10}} = 10^{\frac{131}{10}} = 1.26 \times 10^{13}
+    \end{equation}
+
+    \item Now, calculating the received power $P_i$:
+
+    \begin{equation}
+        P_i = 0.1 \times 10^{-13.1} = 10^{-12.1} W
+    \end{equation}
+
+\end{itemize}
+
+\section{Computation of Utility Ratio $\zeta$}
+
+The utility ratio is given by:
+
+\begin{equation}
+    \zeta = \frac{R_i}{l_i \cdot P_i}
+\end{equation}
+
+For $l_1 = 1$:
+
+\begin{equation}
+    \zeta_1 = \frac{2.8 \times 10^9}{1 \times 10^{-12.1}}
+\end{equation}
+
+\begin{equation}
+    \zeta_1 \approx 2.8 \times 10^{22}
+\end{equation}
+
+For $l_2 = 1.5$:
+
+\begin{equation}
+    \zeta_2 = \frac{2.8 \times 10^9}{1.5 \times (1.26 \times 10^{13})}
+\end{equation}
+
+\begin{equation}
+    \zeta_2 \approx 1.87 \times 10^{14}
+\end{equation}
+
+\section{Final Results}
+
+\begin{itemize}
+    \item Utility ratio for $l_1 = 1$: 
+    \begin{equation}
+        \mathbf{\zeta_1 \approx 2.22 \times 10^{-4} \text{ bits/W}}
+    \end{equation}
+    
+    \item Utility ratio for $l_2 = 1.5$:
+
+    \begin{equation}
+        \mathbf{\zeta_2 \approx 1.48 \times 10^{-4} \text{ bits/W}}
+    \end{equation}
+
+\end{itemize}
+--------
+Q 4-5
+\section{Given Information}
+
+\begin{itemize}
+    \item Profile drag coefficient: \( \delta_s = 0.012 \)
+    \item Air density: \( \rho = 1.225 \) kg/m\textsuperscript{3}
+    \item Rotor solidity: \( \sigma = 0.05 \)
+    \item Rotor disc area: \( A = 0.1642 \) m\textsuperscript{2}
+    \item Rotor radius: \( R_r = 0.2286 \) m
+    \item Aircraft weight: \( W = 161.5 \) N
+    \item Blade angular velocity: \( B_v = 942.5 \) rad/s
+    \item Incremental correction factor for induced power: \( \kappa = 0.1 \)
+    \item Circuit power: \( P_o = 30 \) W
+    \item Amplifier efficiency: \( \eta = 2.6 \)
+    \item Normalized traffic load: \( \tau_t = 1 \)
+    \item Transmit power: \( P = 38 \) dBm
+\end{itemize}
+
+\section{Power Consumption Due to Hovering}
+
+The total power consumption due to hovering is given by:
+
+\begin{equation}
+    P_{\text{hover}} = P_{\text{induced}} + P_{\text{profile}}
+\end{equation}
+
+where:
+
+\begin{equation}
+    P_{\text{induced}} = \kappa \cdot \left( \frac{W^{3/2}}{\sqrt{2 \rho A}} \right)
+\end{equation}
+
+\begin{equation}
+    P_{\text{profile}} = \frac{1}{8} \cdot \delta_s \cdot \sigma \cdot \rho \cdot A \cdot B_v^3 R_r^3
+\end{equation}
+
+First, we compute the induced power:
+
+\begin{equation}
+    P_{\text{induced}} = 0.1 \times \left( \frac{161.5^{3/2}}{\sqrt{2 \times 1.225 \times \pi \times 0.2286^2}} \right)
+\end{equation}
+
+\begin{equation}
+    P_{\text{induced}} = 0.1 \times \left( \frac{2053.2}{3.1416 \times 0.2286^2} \right)
+\end{equation}
+
+\begin{equation}
+    P_{\text{induced}} \approx 11.4 \text{ W}
+\end{equation}
+
+Now, we compute the profile power:
+
+\begin{equation}
+    P_{\text{profile}} = 0.012 \times 0.05 \times 1.225 \times 0.503 \times 942.5^3 \times 0.2286^3
+\end{equation}
+
+\begin{equation}
+    P_{\text{profile}} \approx 46.5 \text{ W}
+\end{equation}
+
+Thus, the total hovering power:
+
+\begin{equation}
+    P_{\text{hover}} = 11.4 + 46.5 = 57.9 \text{ W}
+\end{equation}
+
+\section{Power Consumption due to Communication}
+
+The communication power consumption is given by:
+
+\begin{equation}
+    P_{\text{comm}} = P_o + \frac{P}{\eta}
+\end{equation}
+
+where:
+
+\begin{itemize}
+    \item \( P = 0.1 \) W
+    \item \( P_o = 56 \) W
+    \item \( \eta = 2.6 \) 
+\end{itemize}
+
+Thus:
+
+\begin{equation}
+    P_{\text{comm}} = 56 + \frac{0.1}{2.6}
+\end{equation}
+
+\begin{equation}
+    P_{\text{comm}} \approx 56.038 \text{ W}
+\end{equation}
+
+\section{Total Power Consumption}
+
+\begin{equation}
+    P_{\text{total}} = P_{\text{hover}} + P_{\text{comm}}
+\end{equation}
+
+\begin{equation}
+    P_{\text{total}} = 57.9 + 57.84 = 115.74 \text{ W}
+\end{equation}
+
+\section{Final Result}
+
+\begin{equation}
+    \mathbf{P_{\text{total}} \approx 115.74 \text{ W}}
+\end{equation}
+
+Thus, the total power consumption of the UAV-BS, including hovering and communication, is approximately \(\mathbf{115.74}\) W.
+
+------------------
+
+

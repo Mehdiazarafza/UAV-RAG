@@ -1,0 +1,11 @@
+Consider this information:
+The amount of bandwidth assigned to user i, bi: 20 MHz
+The transmission power of the DBS pd: 0.1 W
+The noise power level N0: -104 dBm/MHz
+The average pathloss between the DBS and user i: 131 dB
+
+
+
+Question : 
+Based on this information,  compute the achievable data rate of downloading data streams from the DBS to users i?
+

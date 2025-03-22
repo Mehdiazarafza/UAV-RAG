@@ -1,0 +1,12 @@
+Human expert's answer: 15.76 degrees, or 0.2715 Radaians 
+*(θ=Arcsin(h/d)), d=sqrt((x-xi)^2+(y-yi)^2+(h)^2)=(65−47)^2+(73−23)^2+15^2=55.22 , θ=Arcsin(15/55.22))=15.76
+​
+
+ChatGPT's Answer: 15.8°  
+*ChatGPT compute horizontal distance, dose not consider h, in distance equation, 
+so is why that the final value for the theta is a little bit different, d=sqrt((x-xi)^2+(y-yi)^2)!
+But the final formulation for the theta is correct!(θ=tan-1(h/d)).
+
+
+Comment: 
+But the answer for ChatGPT is approximately 0.282 or 15.8, so in my opinion, this is correct.

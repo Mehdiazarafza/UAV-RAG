@@ -1,0 +1,2 @@
+Human expert: 1.5Mbit/(20 MHz*(log2 (1+(1.5 * 0.1 W)/-169 dBm/Hz)))
+0.00192 bits/Hz

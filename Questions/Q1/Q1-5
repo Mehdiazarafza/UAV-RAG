@@ -1,0 +1,12 @@
+Consider this information:
+
+The transmit power (p): 38 dBm
+The path loss at reference distance (D0):131 dB
+The distance between the LS and the 𝑖th UE(Ri):17m
+The channel gain (hi):3.26
+The path loss exponent (𝛼): 2.78
+
+
+"""question = """ Based on this information,  compute the received power for a typical  User Equipment(UE) from the UAV-BS.
+
+

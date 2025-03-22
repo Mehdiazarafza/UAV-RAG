@@ -1,0 +1,6 @@
+Consider this information:
+The constant value P_i : 3.5
+The forward speed v:110 K/h
+Mean rotor induced velocity in hover:4.03 m/s
+
+"""question = """ Based on this information,  compute the induced power of UAV in forward flight ?

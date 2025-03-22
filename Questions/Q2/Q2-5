@@ -1,0 +1,9 @@
+Consider this information:
+
+Circuit power (𝑃𝑜): 56 W
+Amplifier efficiency (𝜂): 2.6
+Normalized traffic load(𝜏𝑡 ):1
+Transmit power(𝑃): 38 dBm
+
+"""question = """ Based on this information,  compute the power consumption due to communication.
+

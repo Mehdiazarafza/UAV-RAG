@@ -1,0 +1,5 @@
+Human expert: 0.462
+# Calculate the terms in the expression
+
+term1 = (1 + (v_mps**4) / (4 * (v_base**4)))**(1/2), term2 = (v_mps**2) / (2 * (v_base**2))
+# Full expression result = factor * ((term1 - term2)**(1/2))

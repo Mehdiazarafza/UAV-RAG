@@ -1,0 +1,12 @@
+Consider this information:
+
+The visibility distance (the maximum distance that one object can be clearly discerned) v: 20 km
+The photon’s wave- length : 451 nm
+The size distribution of the scattering particles  q: 1.3
+
+
+
+"""question = """ Based on this information,  compute the atmospheric attenuation factor in dB/km?
+
+
+

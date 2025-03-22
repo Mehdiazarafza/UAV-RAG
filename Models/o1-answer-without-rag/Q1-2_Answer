@@ -1,0 +1,45 @@
+A key difficulty with this problem is that, as stated, there is not enough information to arrive at a unique numerical value for the rotor (blade) power in forward flight.  In helicopter‐type rotor analyses, one typically needs at least:
+
+• The vehicle’s weight (or total thrust the rotor must produce).  
+• The air density (ρ).  
+• Basic blade‐geometry parameters (number of blades, chord, airfoil drag coefficient, etc.).  
+• A suitable rotor‐theory formula (e.g., blade‐element or momentum theory).  
+
+Simply giving  
+• p₀ = 1.5 (an unspecified “constant”),  
+• forward speed v = 110 km/h (≈30.6 m/s),  
+• angular velocity Ω = 300 rad/s,  
+• rotor radius R = 0.4 m  
+
+does not pin down the aerodynamic power.  
+
+Why more information is needed
+
+1) In forward flight, total rotor power typically has at least two major components:  
+   – Induced (or “lift‐induced”) power, often estimated from momentum theory.  
+   – Profile (or “parasite”) power due to drag on the spinning blades themselves, often estimated from blade‐element theory.
+
+2) Both components depend on air density (ρ) and on how much thrust the rotor must generate  
+   (which in turn depends on the UAV’s weight and flight condition).  
+
+3) Even if one assumes the thrust requirement is known, there are empirical or semi‐empirical “constants” in the formulas (such as blade drag coefficients, tip‐loss factors, etc.) that must be specified or lumped into a known expression before a numeric answer can come out.
+
+Typical example formulas
+
+By way of illustration (not a complete solution), in many helicopter texts one finds a “profile‐power” formula of the form
+
+P_profile ≈ (1/8) ρ σ C₍D₀₎ πR² (ΩR)³  
+            × [1 + k (v / (ΩR))²],
+
+where  
+• σ is the rotor solidity (depends on blade chord and number of blades),  
+• C₍D₀₎ is the airfoil’s drag coefficient,  
+• k is an empirical factor (≈4 to 6),  
+• v is forward speed, and  
+• ΩR is the blade tip speed.  
+
+Even here, you can see one must know ρ, σ, C₍D₀₎, and so on.
+
+Conclusion
+
+Because the problem as posed does not provide the rotor thrust (or vehicle weight), the air density, or enough blade‐geometry/aerodynamic details, there is no way to turn the given numbers into a single “watts” (or kW) value for rotor power.  One can only proceed once those other parameters and the specific power formula are specified.

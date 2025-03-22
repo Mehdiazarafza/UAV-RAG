@@ -1,0 +1,13 @@
+Consider this information:
+The constant value p0: 1.5
+The forward speed v:110 K/h
+The blade angular velocity: 300 radians/second
+The rotor radius: 0.4 m
+The constant value pi: 3.5
+Mean rotor induced velocity in hover:4.03 m/s
+The uselage drag ratio: 0.6
+Air density: 1.225 kg/m^3
+Rotor solidity: 0.05
+Rotor disc area: 0.503 m^2
+
+"""question = """ Based on this information,  compute the total power consumption of UAV in forward flight ?

@@ -1,0 +1,8 @@
+Consider this information:
+The bandwidth resources allocated by the UAV to each vehicle Buk: 20 MHz
+The transmit power of the vehicle P_k: 0.1W
+The noise power at the UAV σ^2:−169dBm/Hz
+The channel gain between the vehicle and the UAV h_uk: 1.5
+The calculation task parameter D_k: 1.5 Mbit
+
+"""question = """ Based on this information,  compute the transmission delay of vehicle k transmitting data to the UAV is related to the uplink transmission rate.

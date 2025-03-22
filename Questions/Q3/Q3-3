@@ -1,0 +1,8 @@
+Consider this information:
+
+The transmission bandwidth between the RSU and the UAV Bui:  0.5 MHz
+The transmit power of the UAV PuT: 1W
+The noise power at the UAV σ^2:−169dBm/Hz
+The channel gain between the RSUi  and the UAV h_ui: 3.5
+
+"""question = """ Based on this information,  compute the downlink transmission rate between UAV and RSUi. give final result

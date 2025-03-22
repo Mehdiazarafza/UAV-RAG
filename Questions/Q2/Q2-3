@@ -1,0 +1,7 @@
+Consider this information:
+The bandwidth resources allocated by the UAV to each vehicle Buk: 20 MHz
+The transmit power of the vehicle P_k: 0.1W
+The noise power at the UAV σ^2:-100dBm
+The channel gain between the vehicle and the UAV h_uk: 1.5
+
+"""question = """ Based on this information,  compute the data transmission rate between the UAV and the vehicle, which, according to Shannon’s second theorem ?

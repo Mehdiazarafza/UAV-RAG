@@ -1,0 +1,11 @@
+
+Consider this information:
+1.      user position: (47,23)m 
+2.  	 UAV position: (65,73,15)m
+3.  The LoS, and NLoS probability constants: 9.61, 0.16
+    4. The probability of having a LoS connection (PLoS​) is 1.
+    5. The carrier frequency(fc) is 2 GHz.
+    6. The speed of light under normal conditions is \[3 times 10^8 \] meter per second 
+    7. (μLoS): 3 dB
+
+Based on this information,  Find the path loss for the line-of-sight (LoS) link between the ground user and UAV i
