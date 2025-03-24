@@ -23,4 +23,3 @@ Section for LLM output:
 *  **LLama 3.3:**  [ Llama 3.3 70B ](Models/Llama3.3/Answer)
 *  **Open AI o1:**  [ o1 ](Models/o1/Answer)
 *  **ChatGPT website:**  [ ChatGPT ](Models/ChatGPT/Answer)
-*  **Gemma 3:**  [ Gemma 3 27b ](Models/Gemma-27b/Answer)
