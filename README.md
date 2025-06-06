@@ -1,15 +1,19 @@
-# RAG- UAV
+#  RAG-UAV
 
-Repository for LLM Evaluation in UAV Applications
+A repository for evaluating Large Language Models (LLMs) in Unmanned Aerial Vehicle (UAV) applications using Retrieval-Augmented Generation (RAG).
 
-## Contents
+---
+
+##  Contents
 
 This repository is organized into the following folders:
 
-*   **Answers:** Contains the answers to the questions in the "Questions" folder.
-*   **Models:** Contains LLM models
-*   **Questions:** Contains questions related to UAVs.
-*   **Paper:** Contains research papers used for RAG.
+- **`Answers/`** — Contains the generated answers to UAV-related questions.
+- **`Models/`** — Includes the LLMs used for evaluation.
+- **`Questions/`** — Stores domain-specific questions related to UAV operations.
+- **`Paper/`** — Holds research papers used for building the RAG knowledge base.
+
+---
 
 ## Models
 
