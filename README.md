@@ -8,8 +8,8 @@ A repository for evaluating Large Language Models (LLMs) in Unmanned Aerial Vehi
 
 This repository is organized into the following folders:
 
-- **`Answers/`** — Contains the generated answers to UAV-related questions.
-- **`Models/`** — Includes the LLMs used for evaluation.
+- **`Answers/`** — Contains the answers from the expert for UAV-application.
+- **`Models/`** — Includes the LLMs generated answers for the questions.
 - **`Questions/`** — Stores domain-specific questions related to UAV operations.
 - **`Paper/`** — Holds research papers used for building the RAG knowledge base.
 
