@@ -30,7 +30,7 @@ Section for LLM output:
 
 
 
-
+<!--
 ##  BibTeX
 
 If you find **RAG-UAV** useful for your research or applications, please cite it using the following BibTeX:
@@ -46,3 +46,4 @@ If you find **RAG-UAV** useful for your research or applications, please cite it
   primaryClass = {cs.AI},
   url       = {https://arxiv.org/pdf/2506.04998}
 }
+-->
