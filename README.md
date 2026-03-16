@@ -26,7 +26,7 @@ Section for LLM output:
 *  **Deep Seek:**  [ Deep Seek](Models/DeepSeek/DeepSeek70b/Answer)
 *  **LLama 3.3:**  [ Llama 3.3 70B ](Models/Llama3.3/Answer)
 *  **Open AI o1:**  [ o1 ](Models/o1/Answer)
-*  **ChatGPT website:**  [ ChatGPT ](Models/ChatGPT/Answer)
+*  **ChatGPT:**  [ ChatGPT ](Models/ChatGPT/Answer)
 
 
 
