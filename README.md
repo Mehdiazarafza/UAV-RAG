@@ -1,7 +1,7 @@
 ##  RAG-UAV
 
 A repository for evaluating Large Language Models (LLMs) in Unmanned Aerial Vehicle (UAV) applications using Retrieval-Augmented Generation (RAG).
-This work was accepted at ICLR 2026 Workshop on Logical Reasoning of Large Language Models.
+This work was **accepted** at **ICLR 2026** Workshop on Logical Reasoning of Large Language Models.
 
 ---
 ##  Contents
