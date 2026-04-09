@@ -48,7 +48,7 @@ If you find **RAG-UAV** useful for your research or applications, please cite it
 }
 @inproceedings{
 azarafza2026mathematical,
-title={{MATHEMATICAL} {REASONING} {FOR} {UNMANNED} {AERIAL} {VEHICLES}: A {RAG}-{BASED} {APPROACH} {FOR} {COMPLEX} {ARITHMETIC} {REASONING}},
+title={Mathematical Reasoning for Unmanned Aerial Vehicles: A {RAG}-Based Approach for Complex Arithmetic Reasoning},
 author={Mehdi Azarafza and Mojtaba Nayyeri and Faezeh Pasandideh and Steffen Staab and Achim Rettberg},
 booktitle={ICLR 2026 Workshop on Logical Reasoning of Large Language Models},
 year={2026},
